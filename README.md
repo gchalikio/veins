@@ -54,4 +54,4 @@ Example in JSON:
 
 
 #### License
-Node-veins is MIT licensed.
+Veins is MIT licensed.
