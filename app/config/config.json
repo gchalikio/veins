@@ -1,0 +1,51 @@
+{
+    "title": "databases",
+    "databases": {
+        "mongo": true,
+        "fbase": false,
+        "mysql": false,
+        "mssql": false,
+        "postgre": false,
+        "oracle": false
+    },
+    "modules": [
+    {
+        "id" : 1,
+        "title": "mongo",
+        "enabled": false,
+        "dependencies": [
+            {
+                "title": "mongoose"
+            }
+        ],
+        "routes": {
+            "text" : ""
+        },
+        "controllers": {
+            "text" : ""
+        },
+        "models": {
+            "text" : ""
+        }
+    },
+    {
+        "id" : 1,
+        "title": "mongo",
+        "enabled": false,
+        "dependencies": [
+            {
+                
+            }
+        ],
+        "routes": {
+            "text" : ""
+        },
+        "controllers": {
+            "text" : ""
+        },
+        "models": {
+            "text" : ""
+        }
+    }
+    ]
+}
