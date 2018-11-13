@@ -8,12 +8,12 @@ var logger = require('morgan');
 //View Router
 var indexRouter = require('./app/routes/index');
 //API routers
-var mongoRouter = require('./app/routes/mongo.route');
-var mssqlRouter = require('./app/routes/mssql.route');
-var fbaseRouter = require('./app/routes/fbase.route');
 var mysqlRouter = require('./app/routes/mysql.route');
-var oracleRouter = require('./app/routes/oracle.route');
 var postgreRouter = require('./app/routes/postgre.route');
+var oracleRouter = require('./app/routes/oracle.route');
+var mongoRouter = require('./app/routes/mongo.route');
+var fbaseRouter = require('./app/routes/fbase.route');
+var mssqlRouter = require('./app/routes/mssql.route');
 
 var app = express();
 
@@ -43,12 +43,12 @@ app.use(bodyParser.urlencoded({
 //View Router
 app.use('/', indexRouter);
 //API Routers
+// app.use('/mysql', mysqlRouter);
+// app.use('/postgre', postgreRouter);
+// app.use('/oracle', oracleRouter);
 app.use('/mongo', mongoRouter); //u can rename your routes
-app.use('/mssql', mssqlRouter);
 app.use('/fbase', fbaseRouter);
-app.use('/mysql', mysqlRouter);
-app.use('/oracle', oracleRouter);
-app.use('/postgre', postgreRouter);
+// app.use('/mssql', mssqlRouter);
 
 
 // catch 404 and forward to error handler
