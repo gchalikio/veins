@@ -7,13 +7,17 @@
     "watch": "nodemon ./bin/www"
   },
   "dependencies": {
+    "async": "^2.6.1",
     "body-parser": "^1.18.3",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",
+    "firebase-admin": "^6.1.0",
     "http-errors": "~1.6.2",
+    "mongoose": "^5.3.11",
     "morgan": "~1.9.0",
-    "pug": "^2.0.3"
+    "pug": "^2.0.3",
+    "tedious": "^3.0.1"
   },
   "devDependencies": {
     "nodemon": "^1.18.5"
