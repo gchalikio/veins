@@ -34,23 +34,26 @@ exports.fbaseConfig = () => {
 
 
 //--------------------MSSQL-----------------------//
-exports.doConnect = callback => {
-    var Connection = require('tedious').Connection;  
-    const credentials = require('./creds/mssql');
-    let connection = new Connection( credentials.sql);
+exports.mssqlConfig = {
 
-    connection.on('connect', function(err) {  
-        if (err) {
-            console.log('Error ',err);
-        }
-        callback (null, connection);
-    });  
-}
+    doConnect : callback => {
+        var Connection = require('tedious').Connection;  
+        const credentials = require('./creds/mssql');
+        let connection = new Connection( credentials.sql);
 
-exports.doRelease = connection => {
-    connection.close(err => {
-        if (err) {
-            console.error(err.message);
-        }
-    });
+        connection.on('connect', function(err) {  
+            if (err) {
+                console.log('Error ',err);
+            }
+            callback (null, connection);
+        });  
+    },
+
+    doRelease : connection => {
+        connection.close(err => {
+            if (err) {
+                console.error(err.message);
+            }
+        });
+    }
 }

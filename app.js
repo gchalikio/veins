@@ -48,7 +48,7 @@ app.use('/', indexRouter);
 // app.use('/oracle', oracleRouter);
 app.use('/mongo', mongoRouter); //u can rename your routes
 app.use('/fbase', fbaseRouter);
-// app.use('/mssql', mssqlRouter);
+app.use('/mssql', mssqlRouter);
 
 
 // catch 404 and forward to error handler
