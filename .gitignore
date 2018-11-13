@@ -61,4 +61,4 @@ typings/
 .next
 
 # firebase config
-firebase.json
+creds
