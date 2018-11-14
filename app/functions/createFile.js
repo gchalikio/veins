@@ -16,7 +16,7 @@ const createController = (dbid) => {
     if (fs.existsSync(path)) {
         console.log("db file already exists")
     }else{
-        fs.writeFile(path, config.modules[dbid].controllers.text, function (err) {
+        fs.writeFile(path, config.modules[dbid].controllers.file, function (err) {
             if (err) throw err;
             console.log('controller successfully Saved!');
           });
@@ -28,7 +28,7 @@ const createModel = (dbid) => {
     if( fs.existsSync(path)){
         console.log("db file already exists")
     }else{
-    fs.writeFile(path, config.modules[dbid].models.text, function (err) {
+    fs.writeFile(path, config.modules[dbid].models.file, function (err) {
         if (err) throw err;
         console.log('Model successfully saved!');
       });
@@ -40,7 +40,7 @@ const createRouter = (dbid) => {
     if( fs.existsSync(path)){
         console.log("db file already exists")
     }else{
-    fs.writeFile(path, config.modules[dbid].routes.text, function (err) {
+    fs.writeFile(path, config.modules[dbid].routes.file, function (err) {
         if (err) throw err;
         console.log('Router successfully saved!');
       });
