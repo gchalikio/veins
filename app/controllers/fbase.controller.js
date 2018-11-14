@@ -1,4 +1,4 @@
-const api = require('../functions/respond');
+const api = require('@veins/vn-api');
 const Product = require("../models/product");
 const fbase = require('../config/connection');
 const firestore = fbase.fbaseConfig();
