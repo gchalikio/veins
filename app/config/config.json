@@ -111,9 +111,6 @@
             "dependencies": [
                 {
                     "title": "tedious"
-                },
-                {
-                    "title": "async"
                 }
             ],
             "routes": {
