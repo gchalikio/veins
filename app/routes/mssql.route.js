@@ -1,9 +1,11 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const mssql_controller = require('../controllers/mssql.controller');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+router.post('/create',        mssql_controller.create);
+router.get('/',               mssql_controller.read);
+router.get('/:id',            mssql_controller.readOne);
+router.post('/:id/update',    mssql_controller.update);
+router.delete('/:id/delete',  mssql_controller.delete);
 
 module.exports = router;
