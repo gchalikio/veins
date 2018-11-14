@@ -1,6 +1,6 @@
 "use strict";
 var Request = require('tedious').Request;
-const api = require('../functions/respond');
+const api = require('@veins/vn-api');
 const Product = require("../models/product");
 const config = require('../config/creds/mssql');
 const database = config.sql.options.database;

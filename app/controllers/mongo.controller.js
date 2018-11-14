@@ -1,5 +1,5 @@
 const Product = require('../models/mongo.model');
-const api = require('../functions/respond');
+const api = require('@veins/vn-api');
 
 exports.create = function (req, res, next) {
     let product = new Product({
