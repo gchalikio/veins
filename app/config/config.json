@@ -1,127 +1,127 @@
 {
     "title": "databases",
     "databases": {
-        "mongo": true,
-        "fbase": false,
         "mysql": false,
-        "mssql": false,
         "postgre": false,
-        "oracle": false
+        "oracle": false,
+        "fbase": true,
+        "mongo": true,
+        "mssql": true
     },
     "modules": [
-    {
-        "id" : 1,
-        "title": "mysql",
-        "enabled": false,
-        "dependencies": [
-            {
-                "title": ""
+        {
+            "id" : 1,
+            "title": "mysql",
+            "enabled": false,
+            "dependencies": [
+                {
+                    "title": ""
+                }
+            ],
+            "routes": {
+                "file" : ""
+            },
+            "controllers": {
+                "file" : ""
+            },
+            "models": {
+                "file" : ""
             }
-        ],
-        "routes": {
-            "text" : ""
         },
-        "controllers": {
-            "text" : ""
-        },
-        "models": {
-            "text" : ""
-        }
-    },
-    {
-        "id" : 2,
-        "title": "postgre",
-        "enabled": false,
-        "dependencies": [
-            {
-                "title": ""
+        {
+            "id" : 2,
+            "title": "postgre",
+            "enabled": false,
+            "dependencies": [
+                {
+                    "title": ""
+                }
+            ],
+            "routes": {
+                "file" : ""
+            },
+            "controllers": {
+                "file" : ""
+            },
+            "models": {
+                "file" : ""
             }
-        ],
-        "routes": {
-            "text" : ""
         },
-        "controllers": {
-            "text" : ""
-        },
-        "models": {
-            "text" : ""
-        }
-    },
-    {
-        "id" : 3,
-        "title": "oracle",
-        "enabled": false,
-        "dependencies": [
-            {
-                "title": ""
+        {
+            "id" : 3,
+            "title": "oracle",
+            "enabled": false,
+            "dependencies": [
+                {
+                    "title": ""
+                }
+            ],
+            "routes": {
+                "file" : ""
+            },
+            "controllers": {
+                "file" : ""
+            },
+            "models": {
+                "file" : ""
             }
-        ],
-        "routes": {
-            "text" : ""
         },
-        "controllers": {
-            "text" : ""
-        },
-        "models": {
-            "text" : ""
-        }
-    },
-    {
-        "id" : 4,
-        "title": "mongo",
-        "enabled": false,
-        "dependencies": [
-            {
-                "title": ""
+        {
+            "id" : 4,
+            "title": "mongo",
+            "enabled": true,
+            "dependencies": [
+                {
+                    "title": "mongoose"
+                }
+            ],
+            "routes": {
+                "file" : ""
+            },
+            "controllers": {
+                "file" : ""
+            },
+            "models": {
+                "file" : ""
             }
-        ],
-        "routes": {
-            "text" : ""
         },
-        "controllers": {
-            "text" : ""
-        },
-        "models": {
-            "text" : ""
-        }
-    },
-    {
-        "id" : 5,
-        "title": "fbase",
-        "enabled": false,
-        "dependencies": [
-            {
-                "title": ""
+        {
+            "id" : 5,
+            "title": "fbase",
+            "enabled": true,
+            "dependencies": [
+                {
+                    "title": "firebase-admin"
+                }
+            ],
+            "routes": {
+                "file" : ""
+            },
+            "controllers": {
+                "file" : ""
+            },
+            "models": {
+                "file" : ""
             }
-        ],
-        "routes": {
-            "text" : ""
         },
-        "controllers": {
-            "text" : ""
-        },
-        "models": {
-            "text" : ""
-        }
-    },
-    {
-        "id" : 6,
-        "title": "mssql",
-        "enabled": false,
-        "dependencies": [
-            {
-                "title": ""
+        {
+            "id" : 6,
+            "title": "true",
+            "enabled": false,
+            "dependencies": [
+                {
+                    "title": "tedious"
+                }
+            ],
+            "routes": {
+                "file" : ""
+            },
+            "controllers": {
+                "file" : ""
+            },
+            "models": {
+                "file" : ""
             }
-        ],
-        "routes": {
-            "text" : ""
-        },
-        "controllers": {
-            "text" : ""
-        },
-        "models": {
-            "text" : ""
         }
-    }
     ]
 }

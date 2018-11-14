@@ -1,9 +1,11 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const mongo_controller = require('../controllers/mongo.controller');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+router.post('/create',        mongo_controller.create);
+router.get('/',               mongo_controller.read);
+router.get('/:id',            mongo_controller.readOne);
+router.post('/:id/update',    mongo_controller.update);
+router.delete('/:id/delete',  mongo_controller.delete);
 
 module.exports = router;
