@@ -11,11 +11,12 @@
     "modules": [
         {
             "id" : 1,
-            "title": "mysql",
+            "title": "MySQL",
+            "code": "mysql",
             "enabled": false,
             "dependencies": [
                 {
-                    "title": ""
+                    "title": "minimist"
                 }
             ],
             "routes": {
@@ -30,7 +31,8 @@
         },
         {
             "id" : 2,
-            "title": "postgre",
+            "title": "Postgres",
+            "code": "postgre",
             "enabled": false,
             "dependencies": [
                 {
@@ -49,7 +51,8 @@
         },
         {
             "id" : 3,
-            "title": "oracle",
+            "title": "Oracle",
+            "code": "oracle",
             "enabled": false,
             "dependencies": [
                 {
@@ -68,7 +71,8 @@
         },
         {
             "id" : 4,
-            "title": "mongo",
+            "title": "MongoDb",
+            "code": "mongo",
             "enabled": true,
             "dependencies": [
                 {
@@ -87,7 +91,8 @@
         },
         {
             "id" : 5,
-            "title": "fbase",
+            "title": "Firebase",
+            "code": "fbase",
             "enabled": true,
             "dependencies": [
                 {
@@ -106,7 +111,8 @@
         },
         {
             "id" : 6,
-            "title": "true",
+            "title": "SQL Server",
+            "code": "mssql",
             "enabled": false,
             "dependencies": [
                 {

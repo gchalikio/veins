@@ -17,3 +17,12 @@ scripts:
 	clean everything/reset 
 	DESTROY
 	full install
+
+	------------------------
+	scripts
+	INIT default
+	ADD DATABASE
+	REMOVE DATABASE
+	FULL install
+	reset
+	DESTROY
