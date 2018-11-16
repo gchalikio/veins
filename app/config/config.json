@@ -36,7 +36,7 @@
             "enabled": false,
             "dependencies": [
                 {
-                    "title": ""
+                    "title": "@veins/vn-api"
                 }
             ],
             "routes": {
@@ -56,7 +56,7 @@
             "enabled": false,
             "dependencies": [
                 {
-                    "title": ""
+                    "title": "@veins/vn-api"
                 }
             ],
             "routes": {

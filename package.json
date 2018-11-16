@@ -8,7 +8,6 @@
     "veins": "node ./app/functions/index"
   },
   "dependencies": {
-    "@veins/vn-api": "0.0.1",
     "body-parser": "^1.18.3",
     "chalk": "^2.4.1",
     "clear": "^0.1.0",
@@ -20,6 +19,7 @@
     "firebase-admin": "^6.1.0",
     "http-errors": "~1.6.2",
     "inquirer": "^6.2.0",
+    "minimist": "^1.2.0",
     "mongoose": "^5.3.11",
     "morgan": "~1.9.0",
     "ora": "^3.0.0",

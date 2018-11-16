@@ -5,7 +5,7 @@ const logic = require('./cli-logic');
 const program = require('./program');
 
 const run = async () => {
-  clear()
+
   // console.log(
   //   chalk.red(
   //     figlet.textSync('Veins', {horizontalLayout: 'full'})
@@ -18,6 +18,7 @@ const run = async () => {
       break;
     case 'Add':
       const addSelect = await logic.questions.pickDatabase();
+      console.log(addSelect);
       logic.init.createFiles(addSelect.value, true);
       break;
     case 'Remove':
@@ -35,10 +36,10 @@ const run = async () => {
       resetConfirm && logic.init.createFiles(null, false);
       break;
     case 'Destroy':
-      console.log("Veins is destroyed. Thank you so much for using our package" + chalk.red('!!'));
-      //remove any databases
-      //remove all dependencies
-      //remove veins
+      const destroyConfirm = await logic.init.confirm();
+      if(destroyConfirm){
+        logic.actions.destroy();
+      } 
       break;
     case 'Exit':
       console.log("Exiting" + chalk.red('!!'));
@@ -54,8 +55,9 @@ if (!process.argv.slice(2).length || !/[larfsd]/.test(process.argv.slice(2))) {
   //program.outputHelp();
   console.log("No parameters.. Running CLI....")
   setTimeout(() => {
+    clear();
     run();
-  }, 1000);
+  }, 600);
 }
 
 program.parse(process.argv)

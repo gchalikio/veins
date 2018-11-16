@@ -5,6 +5,7 @@ const helpers = require('./helpers');
 var config = require('../config/config.json')
 var exec = require('child_process').exec, child;
 const ora = require('ora');
+const VEINS = "@veins/vn-api";
 
 //manages route files
 createRoute = (dbid, action) => {
@@ -116,7 +117,7 @@ npmExec = (depedency, install, msg) => {
 
 checkDepedencies = (dep) => {
   const pkg = require("../../package");
-  return pkg.dependencies.hasOwnProperty(dep);
+  return pkg.dependencies.hasOwnProperty(dep) && depDirectoryExists(dep);
 }
 
 //builds the model to hold the database information
@@ -133,6 +134,18 @@ buildModel = (config, dbid) => {
 mapIDtoDatabase = (dbid) => {
   console.log("mapping");
 
+}
+
+depDirectoryExists = (dep) => {
+  try {
+    require.resolve(dep);
+    console.log(dep + " exists");
+    return true;
+  } catch(e) {
+      console.error(dep + " is not found");
+      process.exit(e.code);
+      return false;
+  }
 }
 
 module.exports = {
@@ -179,16 +192,28 @@ module.exports = {
     list: () => {
       console.log(chalk.green("Available Databases: "));
       console.log(helpers.createDBString());
-      checkDepedencies("minimist");
+      depDirectoryExists(VEINS);
     },
+    destroy: () => {
+      for (let i = 0; i < 2; i++) {
+        createController(i, false);
+        createModel(i, false);
+        createRoute(i, false);
+      }
+      npmExec("@veins/vn-api", false, "Uninstalling Veins\n")
+      console.log("Veins is destroyed. Thank you so much for using Veins\n");
+    }
   },
   init: {
     createFiles: async (dbid, action) => {
       if (dbid) {
-        await createController(dbid, action);
-        await createModel(dbid, action);
-        await createRoute(dbid, action);
-        manageDepedencies(dbid, action);
+        for (let i = 0; i < dbid.length; i++) {
+          const db = dbid[i];
+          await createController(db, action);
+          await createModel(db, action);
+          await createRoute(db, action);
+          manageDepedencies(db, action);
+        }
       } else {
         for (let i = 0; i < 2; i++) {
           const db = config.modules[i];
@@ -198,11 +223,12 @@ module.exports = {
         }
       }
     },
-    confirm: () => {
+    confirm: (msg) => {
+
       const questions = [{
         name: 'value',
         type: 'confirm',
-        message: 'Select the action you wish to execute!',
+        message: msg || "Are you sure?",
         choices: ['Y', 'n'],
         default: ['Y']
       }];
