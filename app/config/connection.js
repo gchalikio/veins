@@ -64,12 +64,12 @@ exports.mssqlConfig = {
 exports.oracleConfig = {
     doConnect : callBack => {
         var db = require('oracledb');
-        var dbConfig = require('../creds/oracle.js');
+        
     
         var config = {
-            user: dbConfig.user,
-            password: dbConfig.password,
-            connectString: dbConfig.connectString
+            user: "",
+            password: "",
+            connectString: ""
         };
         db.getConnection(config, callBack);
     },
@@ -87,9 +87,9 @@ exports.oracleConfig = {
 mysqlConfig = () => {
     const Sequelize = require('sequelize')
 
-    const sequelize = new Sequelize('sql9265725', 'sql9265725', 'nK4PKGKww8', {
-        host: 'sql9.freemysqlhosting.net',
-        port: '3306',
+    const sequelize = new Sequelize('', '', '', {
+        host: '',
+        port: '',
         dialect: 'mysql',
         ssl: false,
         operatorsAliases: false,
@@ -130,9 +130,9 @@ module.exports.mysqlModels = mysqlConfig();
 postgreConfig = () => {
     const Sequelize = require('sequelize')
 
-    const sequelize = new Sequelize('d8cr278ff2ghto', 'enqlxxoaypmdsr', '5e698b5595246c0e146f7a1c595294014cb86a7565b25a5149428bdd0132f2fd', {
-        host: 'ec2-54-75-242-222.eu-west-1.compute.amazonaws.com',
-        dialect: 'postgres',
+    const sequelize = new Sequelize('', '', '', {
+        host: '',
+        dialect: '',
         ssl: true,
         dialectOptions : {
           ssl: true
