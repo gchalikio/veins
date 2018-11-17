@@ -16,7 +16,11 @@
     "http-errors": "~1.6.2",
     "mongoose": "^5.3.11",
     "morgan": "~1.9.0",
+    "mysql2": "^1.6.4",
+    "pg": "^7.6.1",
+    "pg-hstore": "^2.3.2",
     "pug": "^2.0.3",
+    "sequelize": "^4.41.2",
     "tedious": "^3.0.1"
   },
   "devDependencies": {
