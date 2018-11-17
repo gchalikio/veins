@@ -43,9 +43,9 @@ app.use(bodyParser.urlencoded({
 //View Router
 app.use('/', indexRouter);
 //API Routers
-// app.use('/mysql', mysqlRouter);
-// app.use('/postgre', postgreRouter);
-// app.use('/oracle', oracleRouter);
+app.use('/mysql', mysqlRouter);
+app.use('/postgre', postgreRouter);
+app.use('/oracle', oracleRouter);
 app.use('/mongo', mongoRouter); //u can rename your routes
 app.use('/fbase', fbaseRouter);
 app.use('/mssql', mssqlRouter);
