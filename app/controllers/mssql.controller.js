@@ -3,7 +3,7 @@ var Request = require('tedious').Request;
 const api = require('../functions/helpers');
 const Product = require("../models/product");
 const config = require('../config/creds/mssql');
-const database = config.sql.options.database;
+const database = config.options.database;
 var db = require('../config/connection').mssqlConfig;
 
 module.exports.create = (req, res, next) => {

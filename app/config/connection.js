@@ -37,16 +37,16 @@ exports.fbaseConfig = () => {
 exports.mssqlConfig = {
 
     doConnect : callback => {
-        var Connection = require('tedious').Connection;  
+        var Connection = require('tedious').Connection;
         const credentials = require('./creds/mssql');
         let connection = new Connection( credentials.sql);
 
-        connection.on('connect', function(err) {  
+        connection.on('connect', function(err) {
             if (err) {
                 console.log('Error ',err);
             }
             callback (null, connection);
-        });  
+        });
     },
 
     doRelease : connection => {
@@ -64,8 +64,8 @@ exports.mssqlConfig = {
 exports.oracleConfig = {
     doConnect : callBack => {
         var db = require('oracledb');
-        
-    
+
+
         var config = {
             user: "",
             password: "",
@@ -93,7 +93,7 @@ mysqlConfig = () => {
         dialect: 'mysql',
         ssl: false,
         operatorsAliases: false,
-      
+
         pool: {
           max: 5,
           min: 0,
@@ -102,24 +102,24 @@ mysqlConfig = () => {
         },
         operatorsAliases: false
       });
-    
+
     const mysqlModels = {
         Product: sequelize.import('../models/mysql.model')
     };
-    
+
     Object.keys(mysqlModels).forEach(key => {
       if ('associate' in mysqlModels[key]) {
         mysqlModels[key].associate(mysqlModels);
       }
     });
-    
+
     mysqlModels.sequelize = sequelize;
     mysqlModels.Sequelize = Sequelize;
-    
-    
-    
+
+
+
     return mysqlModels;
-  
+
 }
 
 module.exports.mysqlModels = mysqlConfig();
@@ -134,11 +134,12 @@ postgreConfig = () => {
         host: '',
         dialect: '',
         ssl: true,
+        dialect: 'postgres',
         dialectOptions : {
           ssl: true
         },
         operatorsAliases: false,
-      
+
         pool: {
           max: 5,
           min: 0,
@@ -147,20 +148,20 @@ postgreConfig = () => {
         },
         operatorsAliases: false
       });
-    
+
     const postgreModels = {
         Product: sequelize.import('../models/postgre.model')
     };
-    
+
     Object.keys(postgreModels).forEach(key => {
       if ('associate' in postgreModels[key]) {
         postgreModels[key].associate(postgreModels);
       }
     });
-    
+
     postgreModels.sequelize = sequelize;
     postgreModels.Sequelize = Sequelize;
-    
+
     return postgreModels;
 }
 
