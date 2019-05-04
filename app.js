@@ -9,18 +9,18 @@ var logger = require('morgan');
 var indexRouter = require('./app/routes/index');
 //API routers
 var mongoRouter = require('./app/routes/mongo.route');
-// var mysqlRouter = require('./app/routes/mysql.route');
-// var postgreRouter = require('./app/routes/postgre.route');
-// var oracleRouter = require('./app/routes/oracle.route');
-// var fbaseRouter = require('./app/routes/fbase.route');
-// var mssqlRouter = require('./app/routes/mssql.route');
+var mysqlRouter = require('./app/routes/mysql.route');
+var postgreRouter = require('./app/routes/postgre.route');
+var oracleRouter = require('./app/routes/oracle.route');
+var fbaseRouter = require('./app/routes/fbase.route');
+var mssqlRouter = require('./app/routes/mssql.route');
 
 var app = express();
 
-//initialise Database Configurations
+// initialise Database Configurations
 // -- DO NOT REMOVE --
-// var initConnections = require('./app/config/init');
-// initConnections.init();
+var initConnections = require('./app/config/init');
+initConnections.init();
 // -- DO NOT REMOVE --
 
 app.use(logger('dev'));
@@ -40,11 +40,11 @@ app.use(bodyParser.urlencoded({
 app.use('/', indexRouter);
 //API Routers
 app.use('/mongo', mongoRouter); //u can rename your routes
-// app.use('/mysql', mysqlRouter);
-// app.use('/postgre', postgreRouter);
-// app.use('/oracle', oracleRouter);
-// app.use('/fbase', fbaseRouter);
-// app.use('/mssql', mssqlRouter);
+app.use('/mysql', mysqlRouter);
+app.use('/postgre', postgreRouter);
+app.use('/oracle', oracleRouter);
+app.use('/fbase', fbaseRouter);
+app.use('/mssql', mssqlRouter);
 
 
 // catch 404 and forward to error handler

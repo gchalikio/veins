@@ -35,9 +35,7 @@
             "code": "postgre",
             "enabled": false,
             "dependencies": [
-                {
-                    "title": "@veins/vn-api"
-                }
+                {}
             ],
             "routes": {
                 "file" : ""
@@ -55,9 +53,7 @@
             "code": "oracle",
             "enabled": false,
             "dependencies": [
-                {
-                    "title": "@veins/vn-api"
-                }
+                {}
             ],
             "routes": {
                 "file" : ""

@@ -8,7 +8,6 @@
     "veins": "node ./app/functions/index"
   },
   "dependencies": {
-    "@veins/vn-api": "0.0.3",
     "body-parser": "^1.18.3",
     "chalk": "^2.4.1",
     "clear": "^0.1.0",

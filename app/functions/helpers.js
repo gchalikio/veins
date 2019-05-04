@@ -19,5 +19,11 @@ module.exports = {
       });
       return dbArray;
     },
-
+    respond : (res, status, result, msg, data) => {
+      res.status(status).json({
+          result: result,
+          msg: msg || "",
+          data: data || null
+      });
+  }
 }
