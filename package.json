@@ -24,7 +24,7 @@
     "mysql2": "^1.6.5",
     "ora": "^3.0.0",
     "pg": "^7.10.0",
-    "sequelize": "^5.8.4",
+    "sequelize": "^5.15.1",
     "tedious": "^6.1.1"
   },
   "devDependencies": {
