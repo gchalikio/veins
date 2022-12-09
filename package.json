@@ -14,7 +14,7 @@
     "commander": "^2.19.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
-    "express": "~4.16.0",
+    "express": "~4.17.3",
     "figlet": "^1.2.1",
     "firebase-admin": "^7.3.0",
     "http-errors": "~1.6.2",
